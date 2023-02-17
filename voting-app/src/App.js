@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { PAGES } from './constants';
+
+import { Main, Landing, Login } from './pages';
+
+import './styles/App.css'
+
+const userData = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')) : null;
+
+const App = () => {
+  const [page, setPage] = useState('landing');
+
+  const [landing, login, main] = PAGES;
+
+  useEffect(() => {
+    if (!userData) {
+      setPage(landing);
+    } else {
+      setPage(main);
+    }
+  }, [landing, main]);
+
+  switch (page) {
+    case landing:
+      return <Landing setPage={setPage} />;
+    case login:
+      return <Login setPage={setPage} />;
+    case main:
+      return <Main setPage={setPage} />;
+    default:
+      return <Landing setPage={setPage} />;
+  }
+};
 
 export default App;
