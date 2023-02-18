@@ -8,6 +8,7 @@ const [, login] = PAGES;
 
 const Landing = ({ setPage }) => {
   return (
+    <div className=''>
     <Wrapper>
       <nav>
         <Logo />
@@ -15,7 +16,7 @@ const Landing = ({ setPage }) => {
       <div className='container page'>
         <div className='info'>
           <h1>
-            Love <span>finding</span> app
+            voting app
           </h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi laboriosam eaque quisquam dicta, ea natus earum commodi molestiae autem soluta fuga illum enim, eum esse!
@@ -27,6 +28,7 @@ const Landing = ({ setPage }) => {
         <img src={main} alt='love finding app' className='img main-img' />
       </div>
     </Wrapper>
+    </div>
   );
 };
 

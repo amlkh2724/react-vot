@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { PAGES } from './constants';
 
-import { Main, Landing, Login } from './pages';
+import { Main, Landing, Login, Admin } from './pages';
 
 import './styles/App.css'
 
@@ -11,7 +11,7 @@ const userData = localStorage.getItem('userData') ? JSON.parse(localStorage.getI
 const App = () => {
   const [page, setPage] = useState('landing');
 
-  const [landing, login, main] = PAGES;
+  const [landing, login, main, admin] = PAGES;
 
   useEffect(() => {
     if (!userData) {
@@ -30,6 +30,8 @@ const App = () => {
       return <Main setPage={setPage} />;
     default:
       return <Landing setPage={setPage} />;
+    case admin:
+      return <Admin setPage={setPage} />;
   }
 };
 

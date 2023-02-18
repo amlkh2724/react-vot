@@ -1,11 +1,29 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.main`
+
+button{
+  margin-top: 1rem;
+  width: 100%;
+  height: 3rem;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container{
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  line-height: 2.5rem;
+  transform: translate(-25%, -40%);
+}
+
   nav {
-    width: var(--fluid-width);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    height: var(--nav-height);
+
     display: flex;
     align-items: center;
   }
@@ -33,7 +51,7 @@ const Wrapper = styled.main`
       column-gap: 3rem;
     }
     .main-img {
-      display: block;
+      display: none;
     }
   }
 `;

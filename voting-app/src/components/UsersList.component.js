@@ -1,4 +1,4 @@
-import User from './User.component';
+import User from './vote';
 import users from '../data/data';
 
 const UsersList = ({ users }) => {
