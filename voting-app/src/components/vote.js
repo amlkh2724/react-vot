@@ -46,6 +46,7 @@ const VotingPage = ({ user, setUser, setPage }) => {
     const savedVotes = JSON.parse(localStorage.getItem('votes')) || {};
     savedVotes[userId] = votes;
     localStorage.setItem('votes', JSON.stringify(savedVotes));
+
   };
 
   // Load the saved votes for the current user when the component mounts
@@ -72,6 +73,7 @@ const VotingPage = ({ user, setUser, setPage }) => {
     const totalVotes = Object.values(savedVotes).reduce((acc, userVotes) => {
       return acc + Object.values(userVotes).reduce((acc2, curr) => acc2 + curr, 0);
     }, 0);
+    // setPage(admin);
 
     const data = [
       { option: 'Option 1', votes: 0 },
@@ -99,7 +101,7 @@ const VotingPage = ({ user, setUser, setPage }) => {
             </li>
           ))}
         </ul>
-        <button onClick={() => setPage(admin)}>Go to Admin Page</button>
+        <button onClick={() => setPage(login)}>Go to Admin Page</button>
       </div>
     );
   }

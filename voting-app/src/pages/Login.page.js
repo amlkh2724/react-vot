@@ -6,7 +6,7 @@ import { Logo, FormRow, Modal } from '../components';
 import Wrapper from '../styles/styled/Login.styled';
 import users from "../data/data";
 
-const [landing] = PAGES;
+const [landing, , , ] = PAGES;
 
 const Login = ({ setPage }) => {
   const [values, setValues] = useState({
@@ -17,9 +17,9 @@ const Login = ({ setPage }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [errorMessages, setErrorMessages] = useState([]);
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  let nameError = false;
+  let emailError = false;
+  let passwordError = false;
 
   const handleChange = (e) => {
     const name = e.target.name;
